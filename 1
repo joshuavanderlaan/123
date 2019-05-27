@@ -1,0 +1,28 @@
+local timeLimit = 30
+local currentTime = 0
+local timerUpTimer
+
+local currentTimeText = display.newText(currentTime, 160, 20, native.systemFontBold, 24)
+currentTimeText:setTextColor(255,0,0)
+
+local function timerUp()
+    currentTime = currentTime + 1
+    currentTimeText.text = currentTime
+
+    if currentTime >= timeLimit then
+        timer.cancel(timerUpTimer)
+        instructions.text = "congratulations, you win"
+		ball:removeSelf()
+		ball = nil
+		thirdball:removeSelf()
+		thirdball = nil
+		theBall:removeSelf()
+		theBall = nil
+		
+
+
+
+
+    end
+
+end
